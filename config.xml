@@ -12,6 +12,6 @@
 
     <icon src="images/icon.png" />
 
-    <plugin name="cordova-plugin-media" />
+    <preference name="AllowInlineMediaPlayback" value="true"/>
 
 </widget>

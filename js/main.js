@@ -78,7 +78,6 @@ var app = {
             $('body').on('mousedown', 'a', function(event) {$(event.target).addClass('tappable-active');});
             $('body').on('mouseup', 'a', function(event) {$(event.target).removeClass('tappable-active');});
         }
-        
         $(window).on('hashchange', $.proxy(this.route, this));
     },
     route: function() { var self = this;
@@ -92,9 +91,19 @@ var app = {
         if (match) {
             this.store.find(function(stream) {
               $('.stream-detail').html(HomeView.detTemplate(stream));
+              this.playAudio();
             },Number(match[1]));
         }
     },
+    playAudio: function() {
+        var audioElement = $('.stream-detail').find("audio")[0];
+        var url = audioElement.getAttribute('src');
+        var my_media = new Media(url,
+                 function () { console.log("playAudio():Audio Success"); },
+                 function (err) { console.log("playAudio():Audio Error: " + err); }
+        );
+        my_media.play();
+    }
     initialize: function() { var self = this;
       this.detailsURL = /^#streams\/(\d{1,})/;
       this.registerEvents();

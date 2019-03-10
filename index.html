@@ -1,6 +1,5 @@
 <html>
 <head>
-  <!--<link href="css/styles.css" rel="stylesheet">-->
   <style>
     /* structure */
     * {margin: 0; padding:0;}
@@ -84,7 +83,7 @@
   </script>
   <script id="stream-tpl" type="text/x-handlebars-template">
       <p style="margin-bottom:1em;">{{this.name}}</p>
-      <{{this.media}} controls autoplay src="{{this.url}}" />
+      <{{this.media}} controls src="{{this.url}}" />
   </script>
 
   <script src="phonegap.js"></script>

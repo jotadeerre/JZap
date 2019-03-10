@@ -12,6 +12,6 @@
 
     <icon src="images/icon.png" />
 
-    <preference name="AllowInlineMediaPlayback" value="true"/>
+    <gap:plugin name="org.apache.cordova.media" />
 
 </widget>

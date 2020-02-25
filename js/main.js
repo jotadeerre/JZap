@@ -99,11 +99,11 @@ var app = {
         var audioElement = $('.stream-detail').find("audio")[0];
         var url = audioElement.getAttribute('src');
         var my_media = new Media(url,
-                 function () { alert("playAudio():Audio Success"); },
-                 function (err) { alert("playAudio():Audio Error: " + err); }
+                 function () { console.log("playAudio():Audio Success"); $('.stream-info').html("Success");},
+                 function (err) { console.log("playAudio():Audio Error: " + err); $('.stream-info').html(err);}
         );
         my_media.play();
-    }
+    },
     initialize: function() {
       var self = this;
       this.detailsURL = /^#streams\/(\d{1,})/;

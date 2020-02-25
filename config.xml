@@ -12,6 +12,7 @@
 
     <icon src="images/icon.png" />
 
-    <gap:plugin name="org.apache.cordova.media" />
+    <!--<gap:plugin name="org.apache.cordova.media" />-->
+    <gap:plugin name="cordova-plugin-media" />
 
 </widget>
